@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет - Wishlist</title>
+    <link rel="stylesheet" href="styles.css?v=1.0.0">
+    <link rel="icon" type="image/png" href="logo.png">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎁 Мой Wishlist</h1>
+            <nav>
+                <button id="themeToggle" class="btn btn-outline">🌙 Тёмная</button>
+                <a href="#" class="btn btn-outline" id="logoutBtn">Выход</a>
+            </nav>
+        </header>
+        
+        <main>
+            <section class="dashboard">
+                <div class="dashboard-header">
+                    <h2>Мой Wishlist</h2>
+                    <div class="dashboard-controls">
+                        <div class="admin-controls" id="adminControls" style="display: none;">
+                            <select id="userSelect" class="btn btn-outline">
+                                <option value="all">Все пользователи</option>
+                            </select>
+                            <select id="categoryFilter" class="btn btn-outline">
+                                <option value="all">Все категории</option>
+                            </select>
+                            <select id="sortFilter" class="btn btn-outline">
+                                <option value="rating-desc">По важности (убывание)</option>
+                                <option value="rating-asc">По важности (возрастание)</option>
+                                <option value="price-desc">По цене (убывание)</option>
+                                <option value="price-asc">По цене (возрастание)</option>
+                                <option value="date-desc">По дате (новые)</option>
+                                <option value="date-asc">По дате (старые)</option>
+                            </select>
+                        </div>
+                        <div class="user-controls" id="userControls">
+                            <select id="categoryFilter" class="btn btn-outline">
+                                <option value="all">Все категории</option>
+                            </select>
+                            <select id="sortFilter" class="btn btn-outline">
+                                <option value="rating-desc">По важности (убывание)</option>
+                                <option value="rating-asc">По важности (возрастание)</option>
+                                <option value="price-desc">По цене (убывание)</option>
+                                <option value="price-asc">По цене (возрастание)</option>
+                                <option value="date-desc">По дате (новые)</option>
+                                <option value="date-asc">По дате (старые)</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary" id="addWishBtn">+ Добавить желание</button>
+                    </div>
+                </div>
+                
+                <div class="wishlist-grid" id="wishlistGrid">
+                    <!-- Wishlist items will be dynamically added here -->
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <!-- Modal for adding new wish -->
+    <div class="modal" id="addWishModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Добавить новое желание</h3>
+            <form id="addWishForm" class="add-wish-form" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="wishTitle">Название подарка</label>
+                    <input type="text" id="wishTitle" name="wishTitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="wishDescription">Описание</label>
+                    <textarea id="wishDescription" name="wishDescription" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="wishCategory">Категория</label>
+                    <input type="text" id="wishCategory" name="wishCategory" placeholder="Например: Техника, Книги, Одежда">
+                </div>
+                <div class="form-group">
+                    <label for="wishPrice">Примерная цена</label>
+                    <input type="number" id="wishPrice" name="wishPrice" min="0">
+                </div>
+                <div class="form-group">
+                    <label for="wishLink">Ссылка на подарок</label>
+                    <input type="url" id="wishLink" name="wishLink" placeholder="https://example.com/product">
+                </div>
+                <div class="form-group">
+                    <label for="wishImage">Изображение подарка</label>
+                    <input type="file" id="wishImage" name="wishImage" accept="image/*">
+                    <div id="imagePreview" class="image-preview"></div>
+                </div>
+                <div class="form-group">
+                    <label>Важность</label>
+                    <div class="star-rating" id="starRating">
+                        <span class="star" data-rating="1">⭐</span>
+                        <span class="star" data-rating="2">⭐</span>
+                        <span class="star" data-rating="3">⭐</span>
+                        <span class="star" data-rating="4">⭐</span>
+                        <span class="star" data-rating="5">⭐</span>
+                    </div>
+                    <input type="hidden" id="wishRating" name="wishRating" value="3">
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Добавить</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="script.js?v=1.0.0"></script>
+</body>
+</html>
