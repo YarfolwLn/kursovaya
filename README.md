@@ -1,6 +1,13 @@
-# 🎁 Wishlist App
+<img width="1536" height="1024" alt="диаграмма прецедентов" src="https://github.com/user-attachments/assets/6cc56a9a-c54d-43ac-8776-5c97d17b1bcb" /># 🎁 Wishlist App
 
 Веб-приложение для создания и ведения списков желаний: регистрация и авторизация через JWT, CRUD желаний с рейтингом и категориями, публичная страница шаринга, админ-панель и загрузка изображений.
+
+UserFlow
+<img width="1578" height="997" alt="userflow" src="https://github.com/user-attachments/assets/0b1ea2fc-35d4-4285-9d60-8a9a9778f1e3" />
+
+Диаграмма прецедентов
+<img width="1536" height="1024" alt="диаграмма прецедентов" src="https://github.com/user-attachments/assets/8cd9a5b5-0a71-4225-8cd6-d1d7008069bf" />
+
 
 ## ✨ Возможности
 
